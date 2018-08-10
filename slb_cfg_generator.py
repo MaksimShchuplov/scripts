@@ -4,7 +4,7 @@ import sys
 __author__ = 'max'
 arglist = sys.argv
 
-#arglist = "video12000", "10.40.231.41", "10.40.231.41", "1.1.177.241"
+#arglist = "server12000", "10.40.231.41", "10.40.231.41", "1.1.177.241"
 servername1 = arglist[1]
 servername2 = servername1[:-1] + "1"
 ip1 = arglist[2]
