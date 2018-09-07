@@ -11,7 +11,6 @@ f = 0
 encnum = 0
 for i in file:
 
-
     if "Enclosure Device ID" in i:
         encnum = int(i.split(":")[1])
         if encnum not in enclosure_mass:
@@ -38,10 +37,14 @@ print pdlist_mass[0:16]
 print pdlist_mass[16:32]
 print len(pdlist_mass)
 
-os.system("/usr/MegaCli/MegaCli64  -CfgSpanAdd -r60 -Array0" + str(pdlist_mass[0:16]) + " -Array1" + str(
-    pdlist_mass[16:32]) + " -sz70000 -a0")
+os.system("/usr/MegaCli/MegaCli64  -CfgSpanAdd -r60 -Array0" +
+          str(pdlist_mass[0:16]) +
+          " -Array1" +
+          str(pdlist_mass[16:32]) +
+          " -sz70000 -a0")
 sleep(5)
-os.system("/usr/MegaCli/MegaCli64  -CfgSpanAdd -r60 -Array0" + str(pdlist_mass[0:16]) + " -Array1" + str(
-    pdlist_mass[16:32]) + "  -a0")
+os.system("/usr/MegaCli/MegaCli64  -CfgSpanAdd -r60 -Array0" +
+          str(pdlist_mass[0:16]) + " -Array1" + str(pdlist_mass[16:32]) + "  -a0")
 sleep(5)
-os.system("/usr/MegaCli/MegaCli64 -PDHSP -Set -PhysDrv[" + str(pdlist_mass[32]) + "] -a0")
+os.system(
+    "/usr/MegaCli/MegaCli64 -PDHSP -Set -PhysDrv[" + str(pdlist_mass[32]) + "] -a0")
